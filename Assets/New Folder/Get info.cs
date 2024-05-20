@@ -10,7 +10,7 @@ public class Getinfo : MonoBehaviour
     {
         if (nul)
         {
-            transform.GetComponentInChildren<TextMeshProUGUI>().text = info.ToString();
-        }else { transform.GetComponentInChildren<TextMeshProUGUI>().text = null; }
+            transform.GetComponentInChildren<TEXDraw>().text = info.ToString();
+        }else { transform.GetComponentInChildren<TEXDraw>().text = null; }
     }
 }

@@ -26,7 +26,8 @@ public class Calculate2 : MonoBehaviour
     private void Update()
     {
         {
-            float gavno = GetFloat(q.GetComponentInChildren<TextMeshProUGUI>().text, 0.0f) * GetFloat(w.GetComponentInChildren<TextMeshProUGUI>().text, 0.0f)*(GetFloat(e.GetComponentInChildren<TextMeshProUGUI>().text, 0.0f)- GetFloat(r.GetComponentInChildren<TextMeshProUGUI>().text, 0.0f));
+            float gavno = 0;
+            gavno = GetFloat(q.GetComponentInChildren<TextMeshProUGUI>().text, 0.0f) * GetFloat(w.GetComponentInChildren<TextMeshProUGUI>().text, 0.0f) * (GetFloat(e.GetComponentInChildren<TextMeshProUGUI>().text, 0.0f) - GetFloat(r.GetComponentInChildren<TextMeshProUGUI>().text, 0.0f)); 
             if (gavno != Mathf.Infinity && gavno != 0 && !float.IsNaN(gavno))
             {
                 gavno = gavno / 1000;

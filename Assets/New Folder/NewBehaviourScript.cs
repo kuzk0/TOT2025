@@ -7,24 +7,31 @@ using UnityEngine.UI;
 public class NewBehaviourScript : MonoBehaviour,IDropHandler
 {
     public GameObject Informator;
-    public GameObject Memory;
+    public GameObject Memory,Mesto;
    public bool enable=true;
     public void OnDrop(PointerEventData eventData)
     {
         
             Debug.Log("Ondrop");
-            if (eventData.pointerDrag != null&& Memory==null)
+            if (eventData.pointerDrag != null&& Memory==null&& eventData.pointerDrag.GetComponent<Info>() != null)
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            Memory = eventData.pointerDrag;
-            Debug.Log(eventData.pointerDrag.GetComponent<Info>().number);
+                Memory = eventData.pointerDrag;
+                
                 Informator.GetComponent<Getinfo>().GetInformation(eventData.pointerDrag.GetComponent<Info>().number, true);
                 
-            }else
+               
+            Memory.transform.parent = Mesto.transform;
+            Memory.GetComponent<RectTransform>().anchoredPosition = Mesto.GetComponent<RectTransform>().anchoredPosition;
+        }
+        else
         {
+            if(eventData.pointerDrag.GetComponent<DragItem>() != null) 
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = eventData.pointerDrag.GetComponent<DragItem>().begin.anchoredPosition;
-            eventData.pointerDrag.GetComponent<CanvasGroup>().blocksRaycasts=false;
-            eventData.pointerDrag.GetComponent<DragItem>().DestroyAnton();
+            if (eventData.pointerDrag.GetComponent<CanvasGroup>() != null)
+                eventData.pointerDrag.GetComponent<CanvasGroup>().blocksRaycasts=false;
+            if (eventData.pointerDrag.GetComponent<DragItem>() != null)
+                eventData.pointerDrag.GetComponent<DragItem>().DestroyAnton();
         }
 
     }

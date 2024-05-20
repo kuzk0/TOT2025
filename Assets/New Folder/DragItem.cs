@@ -31,6 +31,7 @@ public class DragItem : MonoBehaviour, IPointerDownHandler,IBeginDragHandler,IEn
             Anton.GetComponentInParent<NewBehaviourScript>().Memory=null;
             Anton = null;
         }
+        transform.parent = canvas.transform;
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -47,7 +48,6 @@ public class DragItem : MonoBehaviour, IPointerDownHandler,IBeginDragHandler,IEn
         {
             spawn = false;
             Anton = eventData.pointerEnter;
-            
         }
         canvasGroup.blocksRaycasts = true;
     }

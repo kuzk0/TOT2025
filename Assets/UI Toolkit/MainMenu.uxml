@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="debug_button" style="transform-origin: center; width: 50%; height: 25%; align-self: center; align-items: center; justify-content: space-around; text-overflow: ellipsis; position: absolute; top: 263px; left: 25%; bottom: 50%; right: 420px;" />
+    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" style="position: absolute; top: 105px; left: 112px;" />
+</ui:UXML>
