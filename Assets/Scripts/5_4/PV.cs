@@ -11,7 +11,7 @@ public class PV_5_4 : MonoBehaviour
 {
     //btn - first in line of calculations
     //dano - element from dano list
-    public GameObject T1_dano, T2_btn, V_dano, mu_dano, Rv_btn;
+    public GameObject T1_dano, T2_btn, V_btn, mu_dano, Rv_btn;
     // Start is called before the first frame update
     private float T1, T2, V, mu, Rv;
 
@@ -96,7 +96,7 @@ public class PV_5_4 : MonoBehaviour
 
         T1 = GetFloatFromDano(T1_dano);
         T2 = GetFloatFromBtn(T2_btn);
-        V = GetFloatFromDano(V_dano);
+        V = GetFloatFromBtn(V_btn);
         mu = GetFloatFromDano(mu_dano);
         Rv = GetFloatFromBtn(Rv_btn);
 

@@ -45,9 +45,9 @@ public class Check_5_4 : MonoBehaviour
    * MATH simpled
    * 
    * V = (R / mu * T1) / p1
-   * dS = R / mu * i / 2 * Ln((p2 * T1) / p1 / T1)
-   * du = R / mu * i / 2 * ((p2 * T1) / p1 - T1) 
-   * dh = R / mu * (i + 2) / 2 * ((p2 * T1) / p1 - T1) 
+   * dS = ((R / mu) * i / 2) * Ln(((p2 * T1) / p1) / T1)
+   * du = ((R / mu) * i / 2) * (((p2 * T1) / p1) - T1) 
+   * dh = ((R / mu) * (i + 2) / 2) * (((p2 * T1) / p1) - T1) 
    * 
    */
 
@@ -55,9 +55,9 @@ public class Check_5_4 : MonoBehaviour
     {
         bool win = false;
         float calculatedResultV =  ((ToF(R) / ToF(mu)) * ToF(T1)) / ToF(p1);
-        float calculatedResultdS = (float)(((ToF(R) / ToF(mu)) * ToF(i) / 2.0f) * Math.Log(((ToF(p2) * ToF(T1))/ ToF(p1)) / ToF(T1)));
-        float calculatedResultdu = ((ToF(R) / ToF(mu)) * ToF(i) / 2.0f) * ((ToF(p2) * ToF(T1)) / ToF(p1)) - ToF(T1);
-        float calculatedResultdh = ((ToF(R) / ToF(mu)) * (ToF(i) + 2.0f) / 2.0f) * ((ToF(p2) * ToF(T1)) / ToF(p1)) - ToF(T1);
+        float calculatedResultdS = ((ToF(R) / ToF(mu)) * ToF(i) / 2.0f) * Mathf.Log(((ToF(p2) * ToF(T1)) / ToF(p1)) / ToF(T1));
+        float calculatedResultdu = ((ToF(R) / ToF(mu)) * ToF(i) / 2.0f) * (((ToF(p2) * ToF(T1)) / ToF(p1)) - ToF(T1));
+        float calculatedResultdh = ((ToF(R) / ToF(mu)) * (ToF(i) + 2.0f) / 2.0f) * (((ToF(p2) * ToF(T1)) / ToF(p1)) - ToF(T1));
         try
         {
             win = Math.Abs(GetFloat(OtvetV.GetComponentInChildren<TEXDraw>().text, 0.0f) - calculatedResultV) / calculatedResultV * 100 < 3 &&

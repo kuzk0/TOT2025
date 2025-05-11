@@ -128,8 +128,8 @@ public class Calc_5_4 : MonoBehaviour
         catch { }
         try
         {
-            SetRes(Cp, F(CvStr, "Otvet"),
-                ToF(F(CvStr, "inform/Râ")) * (ToF(F(CvStr, "inform/i")) + 2) / 2.0f
+            SetRes(Cp, F(CpStr, "Otvet"),
+                ToF(F(CpStr, "inform/Râ")) * (ToF(F(CpStr, "inform/i")) + 2) / 2.0f
                );
         }
         catch { }
